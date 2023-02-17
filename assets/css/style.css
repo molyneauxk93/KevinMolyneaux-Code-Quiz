@@ -1,0 +1,11 @@
+body {
+    display:flex;
+}
+
+.quiz-questions {
+    display: none;
+}
+
+.submit-score {
+    display: none;
+}
