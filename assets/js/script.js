@@ -12,7 +12,6 @@ var optionC = document.querySelector("#C");
 var optionD = document.querySelector("#D");
 
 var count = 0;
-var isWin = false;
 var timer;
 var timerCount;
 var quizScore = 0;
@@ -49,7 +48,6 @@ var multiQuestions = [
 
 //startGame function called on button click event 
 function startGame() {
-    isWin = false;
     //initializing timer to 60
     timerCount = 60;
     // Prevents start button from being clicked when round is in progress
@@ -86,30 +84,14 @@ function startTimer() {
     timer = setInterval(function () {
         timerCount--;
         timerEl.textContent = timerCount;
-        if (timerCount >= 0) {
-            // Tests if win condition is met
-            if (isWin && timerCount > 0) {
-                // Clears interval and stops timer
-                clearInterval(timer);
-                quizComplete();
-            }
-        }
+        
         // Tests if time has run out
-        if (timerCount === 0 || isWin === false && currentQuestion === multiQuestions.length) {
+        if (timerCount === 0 || currentQuestion === multiQuestions.length) {
             // Clears interval
             clearInterval(timer);
             timesUp();
         }
     }, 1000);
-}
-
-//Function called if user answers all questions available within the time limit
-function quizComplete() {
-    quizResult.textContent = "YOU'VE ANSWERED ALL OF THE QUESTIONS";
-    scoreMsg.textContent = "You final score is " + quizScore + ". Please enter your Initials! Thanks for playing!";
-    //Hides Questions and displays Score submission
-    quizContainer.setAttribute("style", "display:none");
-    submitContainer.setAttribute("style", "display:inline");
 }
 
 //Function called if time runs our or there are no more questions 
@@ -121,12 +103,6 @@ function timesUp() {
     submitContainer.setAttribute("style", "display:inline");
 }
 
-//Function checks the players score (i dont need this for this game)
-function checkScore() {
-    if (quizScore === 20) {
-        isWin = true;
-    }
-}
 
 //Event listener to start button that called startGame function when clicked
 startButton.addEventListener("click", startGame);
@@ -137,7 +113,7 @@ quizContainer.addEventListener("click", function (event) {
     event.preventDefault;
     var element = event.target;
 
-    if (element.matches("button")) {
+    if (element.matches("div")) {
         var selectedOption = element.getAttribute("id");
         //Checks to see if the selected answer matches the correct answer for that question
         if (selectedOption === multiQuestions[currentQuestion].answer) {
@@ -152,9 +128,7 @@ quizContainer.addEventListener("click", function (event) {
             //Increments current question variable number and calls function to update question
             currentQuestion++;
             renderQuiz();
-        }
-        //Check the current score to see if the user 
-        checkScore();
+        }  
     }
 
 });
