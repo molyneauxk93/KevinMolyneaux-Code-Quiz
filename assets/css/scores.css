@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+header {
+    background-image: linear-gradient(
+      rgba(25, 1, 243, 0.79) 0%,
+      rgba(19, 155, 189, 0.471) 100%
+    );
+    
+}
+
+nav {
+    text-align:left;
+    font-size:32px;
+}
+
+ul {
+    margin:20px;
+    
+}
+
+ul,
+li{
+    list-style-type: none;
+    display:inline-block;
+}
+
+body {
+    background-color:linen;
+    
+}
+
