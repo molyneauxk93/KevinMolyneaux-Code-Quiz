@@ -12,6 +12,11 @@ header {
 
 }
 
+p { 
+font-family: 'Courgette', cursive, 'Josefin Sans', sans-serif;
+
+}
+
 nav {
     text-align: center;
     font-size: 32px;
@@ -40,12 +45,18 @@ body {
 .quiz-start {
     font-size: 26px;
     text-align: center;
+    margin-left:70px;
+    margin-right: 70px;
+    margin-top:50px;
 }
 
 .start-button {
     width: 100px;
-    height: 25px;
-    margin: 10px;
+    background-color:rgb(53, 32, 32);
+    color:white;
+    border-radius: 10px;
+    height: 30px;
+    margin-top: 30px;
     font-weight: bold;
     font-size: 20px;
 }

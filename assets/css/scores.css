@@ -12,13 +12,18 @@ header {
 
 }
 
+h1 {
+    text-align: center;
+    font-weight:bold;
+}
+
 nav {
     text-align: left;
     font-size: 32px;
 }
 
 ul {
-    margin: 20px;
+    margin: 0px;
 }
 
 ul,
@@ -33,7 +38,7 @@ body {
     
 }
 
-.score-list {
+#list-item {
     display: block;
     margin:auto;
     text-align:center;
@@ -45,7 +50,6 @@ body {
 }
 
 #list-item:hover {
-    cursor: pointer;
     box-shadow: 0 0.4rem 1.4rem 0 rgba(243, 0, 190, 0.79);
     transform: scale(1.02);
     transform: transform 100ms;
