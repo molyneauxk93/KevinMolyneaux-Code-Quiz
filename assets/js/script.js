@@ -6,11 +6,13 @@ var submitContainer = document.querySelector(".submit-score");
 var quizResult = document.querySelector(".quiz-result");
 var scoreMsg = document.querySelector("#score-msg");
 var submitButton = document.querySelector("#user-score-submit");
+var scoreButton = document.querySelector("#highscore-button");
 var optionA = document.querySelector("#A");
 var optionB = document.querySelector("#B");
 var optionC = document.querySelector("#C");
 var optionD = document.querySelector("#D");
 
+//initializing variables for count, timer functionality, and quiz score 
 var count = 0;
 var timer;
 var timerCount;
@@ -58,7 +60,7 @@ function startGame() {
 }
 
 //Variables to render questions to screen
-var lastQuestion = multiQuestions.length - 1;
+// var lastQuestion = multiQuestions.length - 1;
 var currentQuestion = 0;
 
 //Function to render questions to the screen
@@ -79,12 +81,12 @@ function renderQuiz() {
 //Starts Quiz timer countdown at 60 seconds
 function startTimer() {
     //Display Quiz questions
-    quizContainer.setAttribute("style", "display:inline");
+    quizContainer.setAttribute("style", "display:block");
     // Sets timer
     timer = setInterval(function () {
         timerCount--;
         timerEl.textContent = timerCount;
-        
+
         // Tests if time has run out
         if (timerCount === 0 || currentQuestion === multiQuestions.length) {
             // Clears interval
@@ -128,23 +130,28 @@ quizContainer.addEventListener("click", function (event) {
             //Increments current question variable number and calls function to update question
             currentQuestion++;
             renderQuiz();
-        }  
+        }
     }
 
 });
 
+
 //Event Listener for Initials submission button
-submitButton.addEventListener("click", function(event) {
+submitButton.addEventListener("click", function (event) {
     event.preventDefault();
     //Gets user initial value from text box
     var userInitial = document.querySelector("#initials").value;
     //Check to see if text box is empty on submit
-    if(userInitial === ""){
+    if (userInitial === "") {
         alert("Initials cannot be blank");
     } else {
         alert("Registered Successfully");
     }
+
+    var scores = JSON.parse(localStorage.getItem("scores")) || [];
+    scores.push(userInitial + "," + quizScore);
+
     //Stores initials and score in local storage to be used in High scores page
-    localStorage.setItem("Initials", userInitial);
-    localStorage.setItem("Score", quizScore);
+
+    localStorage.setItem('scores', JSON.stringify(scores));
 });
