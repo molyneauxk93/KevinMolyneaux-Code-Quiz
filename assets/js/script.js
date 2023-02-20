@@ -21,27 +21,83 @@ var quizScore = 0;
 // Multiple choice questions array with objects
 var multiQuestions = [
     {
-        question: 'What is 1 + 1?',
-        choice1: '2',
-        choice2: '3',
-        choice3: '4',
-        choice4: '5',
+        question: 'Internal styles are written within the _____ element.',
+        choice1: '<style>…</style>',
+        choice2: '<css>…</css>',
+        choice3: '<stylesheet>…</stylesheet>',
+        choice4: 'Both A. and B.',
         answer: 'A',
     },
     {
-        question: 'What is 5 + 1?',
-        choice1: '2',
-        choice2: '3',
-        choice3: '6',
-        choice4: '5',
+        question: 'From the given options which is/are the valid way to represent a color?',
+        choice1: 'A valid color name like "blue"',
+        choice2: 'HEX code like "#0000ff"',
+        choice3: 'RGB Value like "rgb(0,0,255)',
+        choice4: 'All of the above',
+        answer: 'D',
+    },
+    {
+        question: 'Javascript is an _______ language?',
+        choice1: 'Object-Oriented',
+        choice2: 'Object-Based',
+        choice3: 'Procedural',
+        choice4: 'None of the above',
+        answer: 'A',
+    },
+    {
+        question: 'Which of the following methods is used to access HTML elements using Javascript?',
+        choice1: 'getElementbyId()',
+        choice2: 'getElementsByClassName()',
+        choice3: 'Both A and B',
+        choice4: 'None of the above',
         answer: 'C',
     },
     {
-        question: 'What is 12 + 1?',
-        choice1: '2',
-        choice2: '3',
-        choice3: '4',
-        choice4: '13',
+        question: 'Which of the following methods can be used to display data in some form using Javascript?',
+        choice1: 'document.write()',
+        choice2: 'console.log()',
+        choice3: 'window.alert()',
+        choice4: 'All of the above',
+        answer: 'D',
+    },
+    {
+        question: 'CSS comments are placed within the ______.',
+        choice1: '//',
+        choice2: '/* and */',
+        choice3: '<* and *>',
+        choice4: '<! and !>',
+        answer: 'B',
+    },
+    {
+        question: 'Which property is used to define the font of the elements text?',
+        choice1: 'font',
+        choice2: 'font-family',
+        choice3: 'font-style',
+        choice4: 'All of the above',
+        answer: 'B',
+    },
+    {
+        question: 'When an operators value is NULL, the typeof returned by the unary operator is:',
+        choice1: 'Boolean',
+        choice2: 'Undefined',
+        choice3: 'Object',
+        choice4: 'Integer',
+        answer: 'C',
+    },
+    {
+        question: 'Which function is used to serialize an object into a JSON string in Javascript?',
+        choice1: 'stringify()',
+        choice2: 'parse()',
+        choice3: 'convert()',
+        choice4: 'None of the above',
+        answer: 'A',
+    },
+    {
+        question: 'What are the valid values of font-style property?',
+        choice1: 'italic, bold, bolder',
+        choice2: 'normal, bold, italic',
+        choice3: 'underline, bold, italic',
+        choice4: 'inherit, italic, normal, oblique',
         answer: 'D',
     }
 ]
@@ -120,13 +176,15 @@ quizContainer.addEventListener("click", function (event) {
         //Checks to see if the selected answer matches the correct answer for that question
         if (selectedOption === multiQuestions[currentQuestion].answer) {
             // Updates user score and increments current question variable number to update to the next question
-            quizScore += 10;
+            quizScore += 5;
             currentQuestion++;
             // calls render quiz function again to refresh to new question
             renderQuiz();
         } else {
             // If user choice was incorrect, timer decreases by 10 seconds
-            timerCount = timerCount - 10;
+            if (timerCount >= 10) {
+                timerCount = timerCount - 10;
+            }
             //Increments current question variable number and calls function to update question
             currentQuestion++;
             renderQuiz();

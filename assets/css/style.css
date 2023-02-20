@@ -9,7 +9,7 @@
 header {
     background-image: linear-gradient(rgba(25, 1, 243, 0.79) 0%,
             rgba(19, 155, 189, 0.471) 100%);
-
+    
 }
 
 p { 
@@ -28,7 +28,6 @@ nav {
 
 ul {
     margin: 20px;
-
 }
 
 ul,

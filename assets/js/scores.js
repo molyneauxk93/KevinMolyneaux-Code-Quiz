@@ -20,6 +20,8 @@ function updateScores() {
         userScore.sort(function (a, b) {
             var parsedScoreA = a.split(',')[1];
             var parsedScoreB = b.split(',')[1];
+            console.log(parsedScoreA);
+            console.log(parsedScoreB);
             return ((parsedScoreA > parsedScoreB) ? -1 : ((parsedScoreA == parsedScoreB) ? 0 : 1));
         });
     }

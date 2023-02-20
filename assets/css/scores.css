@@ -15,6 +15,9 @@ header {
 h1 {
     text-align: center;
     font-weight:bold;
+    font-size: 36px;
+    margin-top:20px;
+    font-family: 'Courgette', cursive, 'Josefin Sans', sans-serif;
 }
 
 nav {
