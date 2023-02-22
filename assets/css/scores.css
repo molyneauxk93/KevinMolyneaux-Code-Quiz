@@ -5,7 +5,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
-
+/* Adding style to header background of high scores  */
 header {
     background-image: linear-gradient(rgba(25, 1, 243, 0.79) 0%,
             rgba(19, 155, 189, 0.471) 100%);
@@ -18,6 +18,11 @@ h1 {
     font-size: 36px;
     margin-top:20px;
     font-family: 'Courgette', cursive, 'Josefin Sans', sans-serif;
+}
+
+a {
+    margin: 20px;
+    padding: 10px;
 }
 
 nav {
@@ -40,7 +45,7 @@ body {
     background-color: linen;
     
 }
-
+/* Adding style to list items that show the user high scores  */
 #list-item {
     display: block;
     margin:auto;
@@ -52,6 +57,7 @@ body {
     font-size: 20px;
 }
 
+/* Adding style on hover of highscore list to transform list item to be slightly larger and add box shadow  */
 #list-item:hover {
     box-shadow: 0 0.4rem 1.4rem 0 rgba(243, 0, 190, 0.79);
     transform: scale(1.02);

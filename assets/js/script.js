@@ -116,15 +116,15 @@ function startGame() {
 }
 
 //Variables to render questions to screen
-// var lastQuestion = multiQuestions.length - 1;
 var currentQuestion = 0;
 
 //Function to render questions to the screen
 function renderQuiz() {
     if (currentQuestion < multiQuestions.length) {
-
+        //Sets loadQuestion to multiQuestions at index based on currentQuestion value
         var loadQuestion = multiQuestions[currentQuestion];
 
+        //assigns questions and answers from loadQuestion to question and choice div elements
         questionsEl.textContent = loadQuestion.question;
         optionA.textContent = "A." + loadQuestion.choice1;
         optionB.textContent = "B." + loadQuestion.choice2;
@@ -170,7 +170,7 @@ startButton.addEventListener("click", startGame);
 quizContainer.addEventListener("click", function (event) {
     event.preventDefault;
     var element = event.target;
-
+    // Target element div 
     if (element.matches("div")) {
         var selectedOption = element.getAttribute("id");
         //Checks to see if the selected answer matches the correct answer for that question
