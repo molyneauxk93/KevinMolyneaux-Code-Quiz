@@ -2,36 +2,66 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+/* Adding style to header background of high scores  */
+header {
+    background-image: linear-gradient(rgba(25, 1, 243, 0.79) 0%,
+            rgba(19, 155, 189, 0.471) 100%);
 
 }
 
-header {
-    background-image: linear-gradient(
-      rgba(25, 1, 243, 0.79) 0%,
-      rgba(19, 155, 189, 0.471) 100%
-    );
-    
+h1 {
+    text-align: center;
+    font-weight:bold;
+    font-size: 36px;
+    margin-top:20px;
+    font-family: 'Courgette', cursive, 'Josefin Sans', sans-serif;
+}
+
+a {
+    margin: 20px;
+    padding: 10px;
 }
 
 nav {
-    text-align:left;
-    font-size:32px;
+    text-align: left;
+    font-size: 32px;
 }
 
 ul {
-    margin:20px;
-    
+    margin: 0px;
 }
 
 ul,
-li{
+li {
     list-style-type: none;
-    display:inline-block;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 32px;
 }
 
 body {
-    background-color:linen;
+    background-color: linen;
     
 }
+/* Adding style to list items that show the user high scores  */
+#list-item {
+    display: block;
+    margin:auto;
+    text-align:center;
+    margin-top: 20px;
+    width: 20%;
+    border-radius: 4px;
+    background: rgba(243, 1, 1, 0.79);
+    font-size: 20px;
+}
+
+/* Adding style on hover of highscore list to transform list item to be slightly larger and add box shadow  */
+#list-item:hover {
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(243, 0, 190, 0.79);
+    transform: scale(1.02);
+    transform: transform 100ms;
+}
+
 
